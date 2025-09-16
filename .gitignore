@@ -1,0 +1,34 @@
+# env & secrets
+.env
+*.env
+*.env.*
+*.pem
+*.key
+*.p12
+*_secret.*
+*secret*
+*.keystore
+*.pfx
+
+# local state / caches / logs
+state.json
+*.db
+*.sqlite
+*.log
+logs/
+tmp/
+cache/
+coverage/
+
+# tool/IDE noise
+node_modules/
+dist/
+build/
+.eslintcache
+.vscode/
+.idea/
+.DS_Store
+
+# Deno / TypeScript build stuff (if any)
+deno.lock
+.deno/
