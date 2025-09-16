@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "prod": "deno run -A --env-file=.env src/main.ts",
+    "staging": "deno run -A --env-file=.env.staging src/main.ts",
+    "staging:watch": "deno run -A --watch --env-file=.env.staging src/main.ts"
+  },
+  "compilerOptions": {
+    "lib": ["deno.window", "dom", "deno.ns"]
+  }
+}
