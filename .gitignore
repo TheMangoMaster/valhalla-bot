@@ -2,6 +2,7 @@
 .env
 *.env
 *.env.*
+!.env.example
 *.pem
 *.key
 *.p12
@@ -12,6 +13,8 @@
 
 # local state / caches / logs
 state.json
+state.staging.json
+state*.json
 *.db
 *.sqlite
 *.log
