@@ -18,6 +18,7 @@ export type MySession = {
   awaitingFilters?: boolean;
   awaitingFiltersMode?: "add" | "replace";
   menuMsgId?: number;
+  pvpEnabled?: boolean;
 };
 
 // Detect KV availability; otherwise use file storage
@@ -51,6 +52,7 @@ console.log(
 export const sessionMiddleware = session<MySession, Context>({
   initial: (): MySession => ({
     prefs: { enabled: false, usernames: [] },
+    pvpEnabled: false, 
   }),
 
   storage: hasKV

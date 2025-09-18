@@ -1,13 +1,21 @@
 import { InlineKeyboard } from "../../deps.ts";
 
-export function mainMenuInline(enabled: boolean, usernames: string[]) {
+export function mainMenuInline(enabled: boolean, usernames: string[], pvpEnabled: boolean) {
   return new InlineKeyboard()
-    .text(enabled ? "⏸️ Pause" : "▶️ Enable", "menu:toggle")
+    .text(enabled ? "⏸️ Pause Encounters" : "▶️ Enable Encounters", "menu:toggle")
+    .text(pvpEnabled ? "⏸️ PvP Alerts" : "▶️ PvP Alerts", "menu:pvp_toggle").row()
+    .text("⚙️ Settings", "menu:settings")
     .text("📊 Status", "menu:status").row()
-    .text("🔁 Sync now", "menu:sync")
-    .text("🎯 Set Filters", "menu:set_filters")
-    .text("🧹 Manage Filters", "menu:manage").row()
     .text("❓ Help", "menu:help");
+}
+
+export function settingsInline() {
+  return new InlineKeyboard()
+      .text("🔁 Sync Encounters", "settings:sync_enc")
+      .text("🔁 Sync PvP", "settings:sync_pvp").row()
+      .text("🎯 Set Filters", "menu:set_filters")
+      .text("🧹 Manage Filters", "menu:manage").row()
+      .text("⬅️ Back", "menu:back");
 }
 
 export function manageFiltersInline(usernames: string[]) {
